@@ -10,3 +10,13 @@
 // WHEN the game is over
 // THEN I can save my initials and my score
 
+var startButton = document.getElementById("start-button");
+var timerEl = document.getElementById("timer-text");
+var quizBox = document.getElementById("question-container");
+var timerStart = 75; 
+
+startButton.addEventListener("click", function(){
+
+      
+})
+
