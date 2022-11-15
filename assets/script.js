@@ -13,11 +13,15 @@
 var startButton = document.getElementById("start-button");
 var timerEl = document.getElementById("timer-text");
 var quizBox = document.getElementById("question-container");
-var timerStart = 75; 
+var questionTitle = document.getElementById("question-title");
+var questionOptions = documents.getElementById("question-list");
+
+var time = 75; 
 
 startButton.addEventListener("click", function(){
     
     quizBox.innerHTML = "";
-      
+     
+
 })
 
