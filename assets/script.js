@@ -16,7 +16,8 @@ var quizBox = document.getElementById("question-container");
 var timerStart = 75; 
 
 startButton.addEventListener("click", function(){
-
+    
+    quizBox.innerHTML = "";
       
 })
 
