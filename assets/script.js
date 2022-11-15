@@ -14,14 +14,26 @@ var startButton = document.getElementById("start-button");
 var timerEl = document.getElementById("timer-text");
 var quizBox = document.getElementById("question-container");
 var questionTitle = document.getElementById("question-title");
-var questionOptions = documents.getElementById("question-list");
+var questionOptions = document.getElementById("question-list");
 
 var time = 75; 
 
 startButton.addEventListener("click", function(){
     
     quizBox.innerHTML = "";
-     
-
+    timerStart();
 })
+
+function timerStart() {
+
+var timeAttack = setInterval(function() {
+         time--;
+        timerEl.innerHTML = "Time:" + time;
+
+        if(time === 0) {
+        clearInterval(timeAttack);
+        highScoreMessage();
+       } 
+    }, 1000);
+}
 
