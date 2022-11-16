@@ -24,7 +24,7 @@ var questions = [
 "It's grilled cheese time! What's the first step in making one?",
 "Nice! We got the bread. What's next?",
 "Cheesin' it up! What do we do next?",
-"Pan or press if prepped! What's the next step?",
+"Pan or press is prepped! What's the next step?",
 "Now we're grilling! What's the final step?"
 ];
 
@@ -59,10 +59,10 @@ startButton.addEventListener("click", function(){
     questionSpot.appendChild(answerC);
     questionSpot.appendChild(answerD);
 
-    answerA.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;");
-    answerB.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;");
-    answerC.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;" );
-    answerD.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;");
+    answerA.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer; id = option1;");
+    answerB.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer; id = option2;");
+    answerC.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer; id = option3;" );
+    answerD.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer; id = option4;");
 
     
     var timeAttack = setInterval(function() {
@@ -81,20 +81,42 @@ questionSpot.addEventListener("click", function(event){
     
     if(event.target === answerB) {
 
-        alert("Nice! You got one.");
-        questionTitle.innerHTML = questions[2];
+        // alert("Nice! You got one.");
+        questionTitle.innerHTML = questions[1];
         answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[2];
-        answerC.innerHTML = answers[4];
-        answerD.innerHTML = answers[5];
+        answerB.innerHTML = answers[1];
+        answerC.innerHTML = answers[2];
+        answerD.innerHTML = answers[3];
         
         } else {
-        alert("Yikes! Wrong answer, friend!");
+        // alert("Yikes! Wrong answer, friend!");
+        time - 3000;
+        questionTitle.innerHTML = questions[1];
+        answerA.innerHTML = answers[0];
+        answerB.innerHTML = answers[1];
+        answerC.innerHTML = answers[2];
+        answerD.innerHTML = answers[3];
+    }
+})
+
+questionSpot.addEventListener("click", function(event){
+    
+    if(event.target === answerC) {
+
+        // alert("Nice! You got one.");
+        questionTitle.innerHTML = questions[2];
+        answerA.innerHTML = answers[0];
+        answerB.innerHTML = answers[3];
+        answerC.innerHTML = answers[6];
+        answerD.innerHTML = answers[1];
+        
+        } else {
+        // alert("Yikes! Wrong answer, friend!");
         time - 3000;
         questionTitle.innerHTML = questions[2];
         answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[2];
-        answerC.innerHTML = answers[4];
-        answerD.innerHTML = answers[5];
+        answerB.innerHTML = answers[3];
+        answerC.innerHTML = answers[6];
+        answerD.innerHTML = answers[1];
     }
 })
