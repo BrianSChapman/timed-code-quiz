@@ -19,6 +19,7 @@ var answerB = document.createElement("li");
 var answerC = document.createElement("li");
 var answerD = document.createElement("li");
 
+
 var questions = [
 "It's grilled cheese time! What's the first step in making one?",
 "Nice! We got the bread. What's next?",
@@ -49,6 +50,7 @@ var time = 60;
 startButton.addEventListener("click", function(){
     
     questionTitle.innerHTML = questions[0];
+    startButton.innerHTML = "";
     questionOptions.innerHTML = "";
     questionOptions.appendChild(questionSpot);
     questionSpot.appendChild(answerA);
@@ -56,11 +58,12 @@ startButton.addEventListener("click", function(){
     questionSpot.appendChild(answerC);
     questionSpot.appendChild(answerD);
 
-    answerA.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px;");
-    answerB.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px;");
-    answerC.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px;" );
-    answerD.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px;");
+    answerA.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;");
+    answerB.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;");
+    answerC.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;" );
+    answerD.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;");
 
+    
     var timeAttack = setInterval(function() {
     time--;
     timerEl.innerHTML = "Time:" + time;
@@ -73,7 +76,18 @@ startButton.addEventListener("click", function(){
 
 })
 
-// document.replaceChild(questionUl, newUl);
-    // document.replaceChild(newLi, questionOptions);
-    // var newLi = document.createElement('li');
-    // document.main.appendChild('li');
+var keepingScore = ""
+
+questionSpot.addEventListener("click", function(event){
+    var rightAnswer = event.target;
+    
+    if(rightAnswer = answers[1]) {
+        keepingscore++; 
+        
+
+        
+
+    }
+
+
+})

@@ -41,3 +41,9 @@ button {
     background-color: aquamarine ;
 }
 
+button:hover {
+    cursor: pointer;
+    background-color: rgb(96, 201, 166) ;
+}
+
+
