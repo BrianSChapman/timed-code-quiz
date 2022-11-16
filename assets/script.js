@@ -52,6 +52,7 @@ startButton.addEventListener("click", function(){
     questionTitle.innerHTML = questions[0];
     startButton.innerHTML = "";
     questionOptions.innerHTML = "";
+
     questionOptions.appendChild(questionSpot);
     questionSpot.appendChild(answerA);
     questionSpot.appendChild(answerB);
@@ -74,20 +75,26 @@ startButton.addEventListener("click", function(){
       
 } }, 1000);
 
-})
-
-var keepingScore = ""
+});
 
 questionSpot.addEventListener("click", function(event){
-    var rightAnswer = event.target;
     
-    if(rightAnswer = answers[1]) {
-        keepingscore++; 
-        
+    if(event.target === answerB) {
 
+        alert("Nice! You got one.");
+        questionTitle.innerHTML = questions[2];
+        answerA.innerHTML = answers[0];
+        answerB.innerHTML = answers[2];
+        answerC.innerHTML = answers[4];
+        answerD.innerHTML = answers[5];
         
-
+        } else {
+        alert("Yikes! Wrong answer, friend!");
+        time - 3000;
+        questionTitle.innerHTML = questions[2];
+        answerA.innerHTML = answers[0];
+        answerB.innerHTML = answers[2];
+        answerC.innerHTML = answers[4];
+        answerD.innerHTML = answers[5];
     }
-
-
 })
