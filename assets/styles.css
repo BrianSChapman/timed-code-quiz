@@ -5,7 +5,7 @@ header {
    
     display:flex;
     justify-content: space-between; text-decoration: underline 2px;
-    text-decoration-color: rgb(94, 206, 169);
+    text-decoration-color: aquamarine;
 }
 
 #score {
@@ -38,6 +38,6 @@ section{
 button {
     text-decoration: underline 1px;
     font-weight: bolder;
-    background-color: rgb(94, 206, 169) ;
+    background-color: aquamarine ;
 }
 

@@ -1,6 +1,3 @@
-// GIVEN I am taking a code quiz
-// WHEN I click the start button
-// THEN a timer starts and I am presented with a question
 // WHEN I answer a question
 // THEN I am presented with another question
 // WHEN I answer a question incorrectly
@@ -9,14 +6,18 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and my score
-
+var body = document.body;
 var startButton = document.getElementById("start-button");
 var timerEl = document.getElementById("timer-text");
 var quizBox = document.getElementById("question-container");
 var questionTitle = document.getElementById("question-title");
-var questionUl = document.getElementById("question-UL");
+// var questionUl = document.getElementById("question-UL");
 var questionOptions = document.getElementById("question-list");
-var time = 60; 
+var questionSpot = document.createElement("ol");
+var answerA = document.createElement("li");
+var answerB = document.createElement("li");
+var answerC = document.createElement("li");
+var answerD = document.createElement("li");
 
 var questions = [
 "It's grilled cheese time! What's the first step in making one?",
@@ -29,27 +30,41 @@ var questions = [
 var answers = [
 "Eat it!",
 "Get out some bread.",
-"Put the cheese on it",
-"Throw ingredients in a pan or panini press",
-"Check an email",
-"Grease the pan or panini press",
-"Peek at Black Friday deals",
-"Send a 'per my last email' response to your lazy coworker",
-"Throw it in the garbage"
+"Put the cheese on it.",
+"Throw ingredients in a pan or panini press.",
+"Check an email.",
+"Grease the pan or panini press.",
+"Peek at Black Friday deals.",
+"Send a 'per my last email' response to your lazy coworker.",
+"Throw it in the garbage."
 ] 
 
+answerA.innerHTML = answers[0];
+answerB.innerHTML = answers[1];
+answerC.innerHTML = answers[2];
+answerD.innerHTML = answers[3];
+
+var time = 60; 
 
 startButton.addEventListener("click", function(){
     
-    questionTitle.innerHTML = "It's grilled cheese time! What's the first step in making one?";
-    var newUl = document.createElement("ul");
-    // var newLi = document.
+    questionTitle.innerHTML = questions[0];
+    questionOptions.innerHTML = "";
+    questionOptions.appendChild(questionSpot);
+    questionSpot.appendChild(answerA);
+    questionSpot.appendChild(answerB);
+    questionSpot.appendChild(answerC);
+    questionSpot.appendChild(answerD);
+
+    answerA.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px;");
+    answerB.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px;");
+    answerC.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px;" );
+    answerD.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px;");
 
     var timeAttack = setInterval(function() {
     time--;
     timerEl.innerHTML = "Time:" + time;
-
-
+    
     if(time === 0) {
     clearInterval(timeAttack);
     highScoreMessage();
@@ -58,9 +73,7 @@ startButton.addEventListener("click", function(){
 
 })
 
-
-
-
-
-
-
+// document.replaceChild(questionUl, newUl);
+    // document.replaceChild(newLi, questionOptions);
+    // var newLi = document.createElement('li');
+    // document.main.appendChild('li');
