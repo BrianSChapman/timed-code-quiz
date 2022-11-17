@@ -1,5 +1,3 @@
-// WHEN I answer a question
-// THEN I am presented with another question
 // WHEN I answer a question incorrectly
 // THEN time is subtracted from the clock
 // WHEN all questions are answered or the timer reaches 0
@@ -17,39 +15,65 @@ var answerA = document.createElement("li");
 var answerB = document.createElement("li");
 var answerC = document.createElement("li");
 var answerD = document.createElement("li");
+var playerInput = document.getElementById("score-box");
 
 
 var questions = [
-"It's grilled cheese time! What's the first step in making one?",
-"Nice! We got the bread. What's next?",
-"Cheesin' it up! What do we do next?",
-"Pan or press is prepped! What's the next step?",
-"Now we're grilling! What's the final step?"
+    "It's grilled cheese time! What's the first step in making one?",
+    "Nice! We got the bread. What's next?",
+    "Cheesin' it up! What do we do next?",
+    "Pan or press is prepped! What's the next step?",
+    "Now we're grilling! What's the final step?"
 ];
 
-var answers = [
-"Eat it!",
-"Get out some bread.",
-"Put the cheese on it.",
-"Throw ingredients in a pan or panini press.",
-"Check an email.",
-"Grease the pan or panini press.",
-"Peek at Black Friday deals.",
-"Send a 'per my last email' response to your lazy coworker.",
-"Throw it in the garbage."
+var answersQ1 = [
+    "Eat it!",
+    "Get out some bread.",
+    "Put the cheese on it.",
+    "Check an email",
 ] 
 
-answerA.innerHTML = answers[0];
-answerB.innerHTML = answers[1];
-answerC.innerHTML = answers[2];
-answerD.innerHTML = answers[3];
+var answersQ2 = [
+    "Eat it!",
+    "Get out some bread.",
+    "Put the cheese on it.",
+    "Check an email",
+]
 
-var time = 60; 
+var answersQ3 = [
+    "Eat it!",
+    "send a 'per my last email' response to a lazy coworker",
+    "Grease the pan or panini press.",
+    "Put the cheese on it",
+]
+
+var answerQ4 = [
+    "Eat it!",
+    "Get out some bread",
+    "Throw ingredients on a panini press",
+    "Toss it in the garbage",
+]
+
+var answerQ5 = [
+    "Eat it!",
+    "Get out some bread",
+    "Throw ingredients on a panini press",
+    "Toss it in the garbage",
+]
+
+
+answerA.innerText = answersQ1[0];
+answerB.innerText = answersQ1[1];
+answerC.innerText =  answersQ1[2];
+answerD.innerText = answersQ1[3];
+
+var time = 60;
 
 startButton.addEventListener("click", function(){
     
     questionTitle.innerHTML = questions[0];
     startButton.innerHTML = "";
+    startButton.disabled = true;
     questionOptions.innerHTML = "";
 
     questionOptions.appendChild(questionSpot);
@@ -66,7 +90,7 @@ startButton.addEventListener("click", function(){
     
     var timeAttack = setInterval(function() {
     time--;
-    timerEl.innerHTML = "Time:" + time;
+    timerEl.textContent = "Time:" + time;
     
     if(time === 0) {
     clearInterval(timeAttack);
@@ -80,90 +104,95 @@ questionSpot.addEventListener("click", function(event){
     
     if(event.target === answerB) {
 
-        // alert("Nice! You got one.");
-        questionTitle.innerHTML = questions[1];
-        answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[2];
-        answerC.innerHTML = answers[6];
-        answerD.innerHTML = answers[1];
+        questionTitle.innerHTML("Nice! We got the bread. What's next?");
+        answerA.textContent = answersQ2[0];
+        answerB.textContent = answersQ2[1];
+        answerC.textContent = answersQ2[2];
+        answerD.textContent = answersQ2[3];
         
         } else {
-        // alert("Yikes! Wrong answer, friend!");
-        // timerEl.innerHTML = "Time:" + time -;
-        questionTitle.innerHTML = questions[1];
-        answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[2];
-        answerC.innerHTML = answers[6];
-        answerD.innerHTML = answers[1];
+       
+        // timerEl.textContent = "Time:" + time - 2000;
+        questionTitle.textContent = questions[1];
+        answerA.textContent = answersQ2[0];
+        answerB.textContent = answersQ2[1];
+        answerC.textContent = answersQ2[2];
+        answerD.textContent= answersQ2[3];
     }
-        ;
-})
+})       
+
 
 questionSpot.addEventListener("click", function(event){
     
 
-        if(event.target === answerB) {
-        // alert("Nice! You got one.");
-        questionTitle.innerHTML = questions [2];
-        answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[4];
-        answerC.innerHTML = answers[5];
-        answerD.innerHTML = answers[2];
+        if(event.target === answerC) {
+        
+        questionTitle.textContent("Cheesin' it up! What do we do next?");
+        answerA.textContent = answersQ3[0];
+        answerB.textContent = answersQ3[1];
+        answerC.textContent= answersQ3[2];
+        answerD.textContent = answersQ3[3];
         
     }   else {
-        // alert("Yikes! Wrong answer, friend!");
-        time - 3;
-        questionTitle.innerHTML = questions[2];
-        answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[4];
-        answerC.innerHTML = answers[5];
-        answerD.innerHTML = answers[2];
+      
+        // timerEl.textContent= "Time:" + time - 2000;
+        questionTitle.textContent = questions[2];
+        answerA.textContent = answersQ3[0];
+        answerB.textContent = answersQ3[1];
+        answerC.textContent = answersQ3[2];
+        answerD.textContent = answersQ3[3];
     } 
 })
+
 questionSpot.addEventListener("click", function(event){
 
        
     
-        if(event.target === answerD) {
-        // alert("Nice! You got one.");
-        questionTitle.innerHTML = questions [3];
-        answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[2];
-        answerC.innerHTML = answers[7];
-        answerD.innerHTML = answers[3];
+        if(event.target === answerC) {
+       
+        questionTitle.textContent("Pan or press is prepped! What's the next step?");
+        answerA.textContent= answersQ4[0];
+        answerB.textContent = answersQ4[2];
+        answerC.textContent = answersQ4[7];
+        answerD.textContent = answersQ4[3];
         
     }   else {
-        // alert("Yikes! Wrong answer, friend!");
-        time - 3;
-        questionTitle.innerHTML = questions[3];
-        answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[3];
-        answerC.innerHTML = answers[7];
-        answerD.innerHTML = answers[2];
-    } 
-})
+        
+        // timerEl.textContent = "Time:" + time - 2000;
+        questionTitle.textContent = questions[3];
+        answerA.textContent = answersQ4[0];
+        answerB.textContent= answersQ4[3];
+        answerC.textContent = answersQ4[7];
+        answerD.textContent = answersQ4[2];
+} 
+
+}) 
 
 questionSpot.addEventListener("click", function(event){
         
    
-         if(event.target === answerC) {
+         if(event.target === answerA) {
 
-        // alert("Nice! You got one.");
-        questionTitle.innerHTML = questions [4];
-        answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[3];
-        answerC.innerHTML = answers[7];
-        answerD.innerHTML = answers[2];
+        questionTitle.textContent("Now we're grilling! What's the final step?");
+        answerA.textContent = answersQ5[0];
+        answerB.textContent = answersQ5[3];
+        answerC.textContent = answersQ5[7];
+        answerD.textContent = answersQ5[2];
         
     }   else {
-        // alert("Yikes! Wrong answer, friend!");
-        time - 3;
-        questionTitle.innerHTML = questions[4];
-        answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[3];
-        answerC.innerHTML = answers[7];
-        answerD.innerHTML = answers[2];
-    } 
-})
+       
+        // timerEl.textContent = "Time:" + time - 2000;
+        questionTitle.textContent = questionsQ5[4];
+        answerA.textContent= answersQ5[0];
+        answerB.textContent = answersQ5[3];
+        answerC.textContent = answersQ5[7];
+        answerD.textContent = answersQ5[2];
+        } 
+})   
 
-
+function highScoreMessage() {
+    
+    playerInput.setAttribute("style", "display: block; ")
+    
+   
+}

@@ -46,4 +46,7 @@ button:hover {
     background-color: rgb(96, 201, 166) ;
 }
 
-
+input {
+    display:none;
+    text-align: center;
+}
