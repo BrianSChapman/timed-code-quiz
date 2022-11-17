@@ -11,7 +11,6 @@ var startButton = document.getElementById("start-button");
 var timerEl = document.getElementById("timer-text");
 var quizBox = document.getElementById("question-container");
 var questionTitle = document.getElementById("question-title");
-// var questionUl = document.getElementById("question-UL");
 var questionOptions = document.getElementById("question-list");
 var questionSpot = document.createElement("ol");
 var answerA = document.createElement("li");
@@ -59,10 +58,10 @@ startButton.addEventListener("click", function(){
     questionSpot.appendChild(answerC);
     questionSpot.appendChild(answerD);
 
-    answerA.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer; id = option1;");
-    answerB.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer; id = option2;");
-    answerC.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer; id = option3;" );
-    answerD.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer; id = option4;");
+    answerA.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;");
+    answerB.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;");
+    answerC.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;" );
+    answerD.setAttribute("style", "text-align:center; font-size: 15px; background-color: aquamarine; padding:5px; margin-left: 300px; margin-right:300px; margin-bottom: 5px; border-style:solid; border-color: black; border-radius:5px; cursor:pointer;");
 
     
     var timeAttack = setInterval(function() {
@@ -84,39 +83,87 @@ questionSpot.addEventListener("click", function(event){
         // alert("Nice! You got one.");
         questionTitle.innerHTML = questions[1];
         answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[1];
-        answerC.innerHTML = answers[2];
-        answerD.innerHTML = answers[3];
+        answerB.innerHTML = answers[2];
+        answerC.innerHTML = answers[6];
+        answerD.innerHTML = answers[1];
         
         } else {
         // alert("Yikes! Wrong answer, friend!");
-        time - 3000;
+        // timerEl.innerHTML = "Time:" + time -;
         questionTitle.innerHTML = questions[1];
         answerA.innerHTML = answers[0];
-        answerB.innerHTML = answers[1];
-        answerC.innerHTML = answers[2];
-        answerD.innerHTML = answers[3];
+        answerB.innerHTML = answers[2];
+        answerC.innerHTML = answers[6];
+        answerD.innerHTML = answers[1];
     }
+        ;
 })
 
 questionSpot.addEventListener("click", function(event){
     
-    if(event.target === answerC) {
+
+        if(event.target === answerB) {
+        // alert("Nice! You got one.");
+        questionTitle.innerHTML = questions [2];
+        answerA.innerHTML = answers[0];
+        answerB.innerHTML = answers[4];
+        answerC.innerHTML = answers[5];
+        answerD.innerHTML = answers[2];
+        
+    }   else {
+        // alert("Yikes! Wrong answer, friend!");
+        time - 3;
+        questionTitle.innerHTML = questions[2];
+        answerA.innerHTML = answers[0];
+        answerB.innerHTML = answers[4];
+        answerC.innerHTML = answers[5];
+        answerD.innerHTML = answers[2];
+    } 
+})
+questionSpot.addEventListener("click", function(event){
+
+       
+    
+        if(event.target === answerD) {
+        // alert("Nice! You got one.");
+        questionTitle.innerHTML = questions [3];
+        answerA.innerHTML = answers[0];
+        answerB.innerHTML = answers[2];
+        answerC.innerHTML = answers[7];
+        answerD.innerHTML = answers[3];
+        
+    }   else {
+        // alert("Yikes! Wrong answer, friend!");
+        time - 3;
+        questionTitle.innerHTML = questions[3];
+        answerA.innerHTML = answers[0];
+        answerB.innerHTML = answers[3];
+        answerC.innerHTML = answers[7];
+        answerD.innerHTML = answers[2];
+    } 
+})
+
+questionSpot.addEventListener("click", function(event){
+        
+   
+         if(event.target === answerC) {
 
         // alert("Nice! You got one.");
-        questionTitle.innerHTML = questions[2];
+        questionTitle.innerHTML = questions [4];
         answerA.innerHTML = answers[0];
         answerB.innerHTML = answers[3];
-        answerC.innerHTML = answers[6];
-        answerD.innerHTML = answers[1];
+        answerC.innerHTML = answers[7];
+        answerD.innerHTML = answers[2];
         
-        } else {
+    }   else {
         // alert("Yikes! Wrong answer, friend!");
-        time - 3000;
-        questionTitle.innerHTML = questions[2];
+        time - 3;
+        questionTitle.innerHTML = questions[4];
         answerA.innerHTML = answers[0];
         answerB.innerHTML = answers[3];
-        answerC.innerHTML = answers[6];
-        answerD.innerHTML = answers[1];
-    }
+        answerC.innerHTML = answers[7];
+        answerD.innerHTML = answers[2];
+    } 
 })
+
+
